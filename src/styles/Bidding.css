@@ -1,0 +1,237 @@
+.bidding-container {
+  background: #F2F2F4;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  box-shadow: var(--glow-card);
+  margin-top: 2rem;
+}
+
+.bidding-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bidding-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2B2B2C;
+}
+
+.bidding-ended {
+  padding: 1.5rem;
+  background: rgba(220, 38, 38, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.bidding-ended-icon {
+  font-size: 2rem;
+  color: #dc2626;
+  margin-bottom: 0.5rem;
+}
+
+.bidding-ended-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.bidding-ended-text {
+  font-size: 0.9rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.bidding-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bidding-stat-card {
+  padding: 1rem;
+  background: color-mix(in srgb, var(--accent-primary) 15%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 30%, transparent);
+  box-shadow: var(--glow-soft);
+}
+
+.bidding-stat-label {
+  font-size: 0.85rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.bidding-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.bidding-stat-label-with-icon {
+  font-size: 0.85rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bidding-form {
+  margin-bottom: 2rem;
+}
+
+.bidding-error {
+  padding: 1rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 12px;
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.bidding-success {
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 12px;
+  color: #22c55e;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bidding-form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.bidding-input-group {
+  flex: 1;
+}
+
+.bidding-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2B2B2C;
+  margin-bottom: 0.5rem;
+}
+
+.bidding-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  font-size: 1rem;
+  outline: none;
+  background: #FFFFFF;
+  color: #2B2B2C;
+  transition: all 0.3s ease;
+}
+
+.bidding-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 20%, transparent), var(--glow-soft);
+}
+
+.bidding-submit-button {
+  padding: 1rem 2rem;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--glow-primary);
+  transition: all 0.3s ease;
+}
+
+.bidding-submit-button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: var(--glow-primary);
+}
+
+.bidding-submit-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.bidding-login-prompt {
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bidding-login-text {
+  font-size: 0.95rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+}
+
+.bidding-history {
+  margin-top: 2rem;
+}
+
+.bidding-history-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2B2B2C;
+  margin-bottom: 1rem;
+}
+
+.bidding-history-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.bidding-history-item {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 10%, transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bidding-history-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bidding-history-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.bidding-history-time {
+  font-size: 0.85rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+

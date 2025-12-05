@@ -1,0 +1,233 @@
+.sell-page {
+  min-height: 80vh;
+  padding: 8rem 2rem 4rem;
+  background: #FFFFFF;
+  background-image: var(--bg-gradient);
+  font-family: 'Poppins', sans-serif;
+}
+
+.sell-form-card {
+  background: #F2F2F4;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px color-mix(in srgb, var(--accent-primary) 0.15);
+}
+
+.sell-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  font-size: 1rem;
+  outline: none;
+  background: #FFFFFF;
+  color: #2B2B2C;
+  transition: all 0.3s ease;
+}
+
+.sell-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 0.2), 0 0 20px color-mix(in srgb, var(--accent-primary) 0.1);
+}
+
+.sell-select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  font-size: 1rem;
+  background: #FFFFFF;
+  color: #2B2B2C;
+  cursor: pointer;
+}
+
+.sell-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sell-header {
+  margin-bottom: 2rem;
+}
+
+.sell-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent-primary) 0.4));
+}
+
+.sell-subtitle {
+  font-size: 1.1rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.sell-success-card {
+  background: #F2F2F4;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px color-mix(in srgb, var(--accent-primary) 0.15);
+}
+
+.sell-success-icon {
+  font-size: 4rem;
+  color: #22c55e;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.5));
+}
+
+.sell-success-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2B2B2C;
+  margin-bottom: 0.5rem;
+}
+
+.sell-success-text {
+  color: #2B2B2C;
+  opacity: 0.7;
+}
+
+.sell-error {
+  padding: 1rem;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: 12px;
+  color: #ff4d4d;
+  margin-bottom: 1.5rem;
+}
+
+.sell-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.sell-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2B2B2C;
+  margin-bottom: 0.5rem;
+}
+
+.sell-textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  background: #FFFFFF;
+  color: #2B2B2C;
+  transition: all 0.3s ease;
+}
+
+.sell-textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 0.2), 0 0 20px color-mix(in srgb, var(--accent-primary) 0.1);
+}
+
+.sell-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sell-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.sell-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+.sell-checkbox-label {
+  font-weight: 600;
+  color: #2B2B2C;
+  cursor: pointer;
+}
+
+.sell-bidding-section {
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--accent-primary) 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.sell-bidding-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.sell-button {
+  width: 100%;
+  padding: 1.25rem;
+  background: var(--accent-primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--accent-primary) 0.4), 0 0 40px color-mix(in srgb, var(--accent-primary) 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sell-button:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent-primary) 0.6), 0 0 60px color-mix(in srgb, var(--accent-primary) 0.3);
+}
+
+.sell-button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.sell-bidding-section label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2B2B2C;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+

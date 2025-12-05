@@ -1,0 +1,32 @@
+.wishlist-page {
+  min-height: 80vh;
+  padding: 8rem 2rem 4rem;
+  background: #FFFFFF;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 106, 42, 0.03) 0%, transparent 70%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.wishlist-empty {
+  min-height: 80vh;
+  padding: 8rem 2rem 4rem;
+  background: #FFFFFF;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 106, 42, 0.03) 0%, transparent 70%);
+  font-family: 'Poppins', sans-serif;
+}
+
+.wishlist-product-card {
+  background: #F2F2F4;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 106, 42, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 106, 42, 0.15);
+  transition: all 0.3s ease;
+}
+
+.wishlist-product-card:hover {
+  border-color: rgba(255, 106, 42, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 106, 42, 0.2);
+}
+

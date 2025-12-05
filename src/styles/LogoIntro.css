@@ -1,0 +1,126 @@
+.logo-intro {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  pointer-events: none;
+  background: linear-gradient(145deg, #DC143C 0%, #1a1a1a 100%);
+  overflow: hidden;
+}
+
+.logo-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.logo-intro::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  animation: liquid-move 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes liquid-move {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(10%, 10%) rotate(120deg); }
+  66% { transform: translate(-10%, 5%) rotate(240deg); }
+}
+
+.intro-bg-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.intro-particle {
+  position: absolute;
+  background: linear-gradient(135deg, #DC143C, rgba(220, 20, 60, 0.5));
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.4;
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+}
+
+.logo-intro-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-wrapper {
+  position: relative;
+}
+
+.logo-intro-image {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+.logo-intro-text-wrapper {
+  text-align: center;
+}
+
+.logo-intro-text {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 20px rgba(220, 20, 60, 0.8),
+    0 0 40px rgba(220, 20, 60, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.logo-intro-tagline {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  opacity: 0.9;
+  font-weight: 500;
+  margin: 0.5rem 0 0 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-loading-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #DC143C, #FFFFFF, #DC143C);
+  border-radius: 10px;
+  box-shadow: 
+    0 0 20px rgba(220, 20, 60, 0.8),
+    0 0 40px rgba(220, 20, 60, 0.5);
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-intro-image {
+    width: 140px;
+  }
+  
+  .logo-intro-text {
+    font-size: 2.5rem;
+  }
+  
+  .logo-intro-tagline {
+    font-size: 1rem;
+  }
+}
+

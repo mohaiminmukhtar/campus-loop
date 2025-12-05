@@ -1,0 +1,317 @@
+/* Live Hunting Guide - Dark Theme */
+.hunting-guide-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9998;
+}
+
+.hunting-guide-popup {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 90%;
+  max-width: 550px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 25px;
+  padding: 2.5rem;
+  z-index: 9999;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 106, 42, 0.3);
+  overflow: hidden;
+  max-height: 85vh;
+}
+
+/* Animated Glow */
+.hunting-guide-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: pulse-guide-glow 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulse-guide-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Close Button */
+.hunting-guide-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.hunting-guide-close:hover {
+  background: rgba(255, 106, 42, 0.8);
+  border-color: #FF6A2A;
+  transform: rotate(90deg);
+}
+
+/* Content */
+.hunting-guide-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-height: calc(85vh - 10rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+}
+
+/* Hide scrollbar but keep functionality */
+.hunting-guide-content::-webkit-scrollbar {
+  display: none;
+}
+
+.hunting-guide-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Icon */
+.hunting-guide-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Title */
+.hunting-guide-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Description */
+.hunting-guide-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Features List */
+.hunting-guide-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.hunting-guide-feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hunting-guide-feature:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 106, 42, 0.3);
+  transform: translateX(5px);
+}
+
+.hunting-guide-feature svg {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.hunting-guide-feature span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Progress Dots */
+.hunting-guide-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.hunting-guide-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hunting-guide-dot:hover {
+  transform: scale(1.2);
+}
+
+.hunting-guide-dot.active {
+  width: 40px;
+  border-radius: 6px;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Action Buttons */
+.hunting-guide-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hunting-guide-btn {
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.hunting-guide-btn-skip {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hunting-guide-btn-skip:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.hunting-guide-btn-next,
+.hunting-guide-btn-start {
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  flex: 1;
+}
+
+.hunting-guide-btn-next:hover,
+.hunting-guide-btn-start:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.hunting-guide-btn-start {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hunting-guide-popup {
+    padding: 2rem 1.5rem;
+    max-width: 95%;
+  }
+
+  .hunting-guide-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+
+  .hunting-guide-title {
+    font-size: 1.6rem;
+  }
+
+  .hunting-guide-description {
+    font-size: 1rem;
+  }
+
+  .hunting-guide-feature span {
+    font-size: 0.95rem;
+  }
+
+  .hunting-guide-actions {
+    flex-direction: column;
+  }
+
+  .hunting-guide-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hunting-guide-popup {
+    padding: 1.5rem 1rem;
+  }
+
+  .hunting-guide-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .hunting-guide-title {
+    font-size: 1.4rem;
+  }
+
+  .hunting-guide-description {
+    font-size: 0.95rem;
+  }
+
+  .hunting-guide-feature {
+    padding: 0.8rem;
+  }
+
+  .hunting-guide-feature svg {
+    font-size: 1.2rem;
+  }
+
+  .hunting-guide-feature span {
+    font-size: 0.9rem;
+  }
+
+  .hunting-guide-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+

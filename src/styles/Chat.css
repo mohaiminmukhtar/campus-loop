@@ -1,0 +1,132 @@
+.chat-page {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  background: #FFFFFF;
+  background-image: var(--bg-gradient);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-container {
+  background: #F2F2F4;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  box-shadow: var(--glow-card);
+  max-width: 600px;
+  width: 100%;
+}
+
+.chat-icon {
+  font-size: 5rem;
+  color: var(--accent-primary);
+  margin-bottom: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px color-mix(in srgb, var(--accent-primary) 50%, transparent));
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.chat-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent-primary) 40%, transparent));
+}
+
+.chat-subtitle {
+  font-size: 1.2rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.chat-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.chat-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  text-align: left;
+}
+
+.chat-feature-icon {
+  font-size: 2rem;
+  color: var(--accent-primary);
+  min-width: 50px;
+}
+
+.chat-feature-content {
+  flex: 1;
+}
+
+.chat-feature-title {
+  font-weight: 700;
+  color: #2B2B2C;
+  margin-bottom: 0.25rem;
+}
+
+.chat-feature-text {
+  font-size: 0.9rem;
+  color: #2B2B2C;
+  opacity: 0.7;
+}
+
+.chat-icon-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: #fff;
+  box-shadow: var(--glow-primary);
+}
+
+.chat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: color-mix(in srgb, var(--accent-primary) 15%, transparent);
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.chat-feature-icon-small {
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+}
