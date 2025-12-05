@@ -2,7 +2,7 @@
   min-height: 80vh;
   padding: 8rem 2rem 4rem;
   background: #FFFFFF;
-  background-image: radial-gradient(circle at 50% 50%, rgba(255, 106, 42, 0.03) 0%, transparent 70%);
+  background-image: radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.03) 0%, transparent 70%);
   font-family: 'Poppins', sans-serif;
 }
 

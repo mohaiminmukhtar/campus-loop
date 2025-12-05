@@ -1,7 +1,7 @@
 .categories-wrapper {
   width: 100%;
   padding: 3rem 0;
-  background: #FFFFFF;
+  background: transparent;
   margin: 2rem 0;
 }
 
@@ -15,12 +15,12 @@
 .categories-title {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #FF6A2A, #FF8A47);
+  background: linear-gradient(135deg, #DC143C, #FF1744);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 8px rgba(255, 106, 42, 0.3));
+  filter: drop-shadow(0 0 8px rgba(220, 20, 60, 0.5));
 }
 
 .categories-subtitle {
@@ -44,7 +44,7 @@
   padding: 10px 4px;
   text-align: center;
   cursor: pointer;
-  border: 1px solid color-mix(in srgb, var(--accent-primary) 20%, transparent);
+  border: 1px solid rgba(220, 20, 60, 0.2);
   transition: all 0.3s ease;
   min-width: 60px;
   box-shadow: var(--glow-soft);

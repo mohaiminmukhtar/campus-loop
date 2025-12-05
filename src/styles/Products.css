@@ -2,7 +2,7 @@
   min-height: 80vh;
   padding: 8rem 2rem 4rem;
   background: #FFFFFF;
-  background-image: radial-gradient(circle at 50% 50%, rgba(255, 106, 42, 0.03) 0%, transparent 70%);
+  background-image: radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.03) 0%, transparent 70%);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -18,12 +18,12 @@
 .products-title {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #FF6A2A, #FF8A47);
+  background: linear-gradient(135deg, #DC143C, #FF1744);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 8px rgba(255, 106, 42, 0.3));
+  filter: drop-shadow(0 0 8px rgba(220, 20, 60, 0.5));
 }
 
 .products-subtitle {
@@ -51,7 +51,7 @@
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #FF6A2A;
+  color: #DC143C;
   z-index: 1;
 }
 
@@ -59,7 +59,7 @@
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 106, 42, 0.2);
+  border: 1px solid rgba(220, 20, 60, 0.2);
   font-size: 1rem;
   outline: none;
   background: #F2F2F4;
@@ -68,8 +68,8 @@
 }
 
 .products-search-input:focus {
-  border-color: #FF6A2A;
-  box-shadow: 0 0 0 3px rgba(255, 106, 42, 0.2), 0 0 20px rgba(255, 106, 42, 0.1);
+  border-color: #DC143C;
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.2), 0 0 20px rgba(220, 20, 60, 0.1);
 }
 
 .products-sort-select {
@@ -257,7 +257,7 @@
   background: #FFFFFF;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 106, 42, 0.15);
+  border: 1px solid rgba(220, 20, 60, 0.15);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   position: relative;
@@ -267,8 +267,8 @@
 }
 
 .product-card:hover {
-  border-color: #FF6A2A;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 20px rgba(255, 106, 42, 0.15);
+  border-color: #DC143C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 20px rgba(220, 20, 60, 0.15);
   transform: translateY(-4px);
 }
 
@@ -369,7 +369,7 @@
 .product-price {
   font-size: 1.25rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #FF6A2A, #FF8A47);
+  background: linear-gradient(135deg, #DC143C, #FF1744);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

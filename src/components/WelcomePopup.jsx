@@ -79,30 +79,43 @@ export default function WelcomePopup() {
             }}
           />
 
-          {/* Popup */}
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0, y: 50 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.8, opacity: 0, y: 50 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          {/* Centering Container */}
+          <div
             style={{
               position: 'fixed',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%)',
-              borderRadius: '20px',
-              padding: '1.75rem 1.5rem',
-              maxWidth: '460px',
-              width: 'calc(100% - 2rem)',
-              maxHeight: '85vh',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
               display: 'flex',
-              flexDirection: 'column',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 100px rgba(255, 106, 42, 0.2)',
+              alignItems: 'center',
+              justifyContent: 'center',
               zIndex: 9999,
-              overflow: 'hidden'
+              padding: '1rem',
+              pointerEvents: 'none'
             }}
           >
+            {/* Popup */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              style={{
+                background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%)',
+                borderRadius: '20px',
+                padding: '1.75rem 1.5rem',
+                maxWidth: '460px',
+                width: '100%',
+                maxHeight: '85vh',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 100px rgba(255, 106, 42, 0.2)',
+                overflow: 'hidden',
+                position: 'relative',
+                pointerEvents: 'auto'
+              }}
+            >
             {/* Close Button */}
             <button 
               onClick={handleClose}
@@ -352,6 +365,7 @@ export default function WelcomePopup() {
               )}
             </div>
           </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>
