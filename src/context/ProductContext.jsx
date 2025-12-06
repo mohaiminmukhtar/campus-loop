@@ -31,12 +31,12 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     loadProducts();
 
-    // Polling for products (including bid updates) - every 5 seconds
+    // Reduced polling frequency - every 30 seconds instead of 5
     const productsPollingInterval = setInterval(() => {
       loadProducts();
-    }, 5000);
+    }, 30000);
 
-    // Real-time updates (backup)
+    // Real-time updates (primary method)
     const channel = supabase
       .channel("products-changes")
       .on("postgres_changes", { event: "*", schema: "public", table: "products" }, () => {
@@ -92,10 +92,10 @@ export const ProductProvider = ({ children }) => {
       // Initial load
       loadCart();
 
-      // Polling mechanism - check every 3 seconds for changes
+      // Reduced polling - check every 15 seconds for changes
       const cartPollingInterval = setInterval(() => {
         loadCart();
-      }, 3000);
+      }, 15000);
 
       // Real-time cart updates (as backup)
       const cartChannel = supabase
@@ -224,10 +224,10 @@ export const ProductProvider = ({ children }) => {
       // Initial load
       loadFavorites();
 
-      // Polling mechanism - check every 3 seconds for changes
+      // Reduced polling - check every 15 seconds for changes
       const pollingInterval = setInterval(() => {
         loadFavorites();
-      }, 3000);
+      }, 15000);
 
       // Real-time favorites updates (as backup)
       const favoritesChannel = supabase
