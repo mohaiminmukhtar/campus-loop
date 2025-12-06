@@ -494,4 +494,8 @@
   .profile-stats-grid {
     grid-template-columns: 1fr;
   }
+
+  .profile-listings-grid {
+    grid-template-columns: 1fr;
+  }
 }

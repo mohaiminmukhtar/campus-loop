@@ -570,8 +570,8 @@ export default function Profile() {
                   <div
                     className="profile-listing-image"
                     style={{
-                      backgroundImage: product.image ? `url(${product.image})` : 'none',
-                      backgroundColor: product.image ? 'transparent' : '#ddd'
+                      backgroundImage: (product.image_url || product.image) ? `url(${product.image_url || product.image})` : 'none',
+                      backgroundColor: (product.image_url || product.image) ? 'transparent' : '#ddd'
                     }}
                   >
                     {product.sold && (
