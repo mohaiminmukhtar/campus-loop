@@ -54,7 +54,6 @@ export default function BrowseSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        whileHover={{ scale: 1.02, y: -5 }}
         transition={{ duration: 0.3 }}
         className="browse-product-card"
       >
@@ -62,7 +61,7 @@ export default function BrowseSection() {
           {/* Product Image */}
           <div className="browse-product-image-container">
             <img
-              src={product.image || "/logo.PNG"}
+              src={product.image_url || product.image || "/logo.PNG"}
               alt={product.title}
               className="browse-product-image"
             />

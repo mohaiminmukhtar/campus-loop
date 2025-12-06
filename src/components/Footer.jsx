@@ -10,13 +10,28 @@ export default function Footer() {
   const facebook = import.meta.env.VITE_FACEBOOK || "https://facebook.com/campusloop";
   const instagram = import.meta.env.VITE_INSTAGRAM || "https://instagram.com/campusloop";
 
-  // Updated Quick Links (matching Campusloop app/navigation)
+  // Quick Links - 8 links (4-4 in 2 columns)
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "Wishlist", path: "/wishlist" },
     { name: "Chat", path: "/chat" },
     { name: "About", path: "/about" },
+    { name: "My Bids", path: "/bids" },
+    { name: "Sell", path: "/sell" },
     { name: "Cart", path: "/cart" },
+    { name: "Profile", path: "/profile" },
+  ];
+
+  // All Categories - 8 categories including Live Hunting (4-4 in 2 columns)
+  const categories = [
+    { name: "Rentals", path: "/products?category=rentals" },
+    { name: "Barter", path: "/products?category=barter" },
+    { name: "Fashion", path: "/products?category=fashion" },
+    { name: "Electronics", path: "/products?category=electronics" },
+    { name: "Free for All", path: "/products?category=free-for-all" },
+    { name: "Furniture", path: "/products?category=furniture" },
+    { name: "Digital Services", path: "/products?category=digital-services" },
+    { name: "Live Hunting", path: "/live-hunting" },
   ];
 
   const socialLinks = [
@@ -76,21 +91,57 @@ export default function Footer() {
         </p>
       </div>
 
-      {/* Quick Links + Trusted Card */}
+      {/* Quick Links + Categories + Trusted Card */}
       <div className="footer-links-services">
 
-        {/* Quick Links */}
+        {/* Quick Links - 2 columns (4-4) */}
         <div>
           <h3 className="footer-quick-links-title">Quick Links</h3>
-          <ul className="footer-quick-links-list">
-            {quickLinks.map((link, i) => (
-              <li key={i} className="footer-quick-links-item">
-                <Link to={link.path} className="footer-link">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="footer-two-column-grid">
+            <ul className="footer-quick-links-list">
+              {quickLinks.slice(0, 4).map((link, i) => (
+                <li key={i} className="footer-quick-links-item">
+                  <Link to={link.path} className="footer-link">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="footer-quick-links-list">
+              {quickLinks.slice(4, 8).map((link, i) => (
+                <li key={i} className="footer-quick-links-item">
+                  <Link to={link.path} className="footer-link">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Categories - 2 columns (4-4) */}
+        <div>
+          <h3 className="footer-quick-links-title">Categories</h3>
+          <div className="footer-two-column-grid">
+            <ul className="footer-quick-links-list">
+              {categories.slice(0, 4).map((category, i) => (
+                <li key={i} className="footer-quick-links-item">
+                  <Link to={category.path} className="footer-link">
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="footer-quick-links-list">
+              {categories.slice(4, 8).map((category, i) => (
+                <li key={i} className="footer-quick-links-item">
+                  <Link to={category.path} className="footer-link">
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Trusted Section */}

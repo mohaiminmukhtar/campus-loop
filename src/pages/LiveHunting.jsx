@@ -132,7 +132,6 @@ export default function LiveHunting() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.03, y: -8 }}
         transition={{ duration: 0.3 }}
         className="auction-card"
       >

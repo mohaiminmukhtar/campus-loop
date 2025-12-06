@@ -24,9 +24,8 @@ export default function About() {
           transition={{ delay: 0.3, duration: 1 }}
           className="about-hero-subtitle"
         >
-          The leading Amazon FBA Academy for UAE & KSA sellers. We transform beginners into confident,
-          profitable e-commerce entrepreneurs with expert-guided training, real-world strategies, and
-          weekly live mentorship.
+          A secure, student-only marketplace built exclusively for university communities. 
+          Buy, sell, rent, or exchange goods with verified students in a trusted environment.
         </motion.p>
 
         {/* SECTION: WHO WE ARE */}
@@ -40,10 +39,9 @@ export default function About() {
             Who We Are
           </h2>
           <p className="about-section-text">
-            Campusloop is a modern Amazon training platform created for ambitious individuals ready to build
-            long-term income. Our programs are built on years of hands-on Amazon experience in multiple
-            marketplaces — especially <strong>UAE & Saudi Arabia</strong>, the fastest-growing e-commerce
-            regions in the world.
+            Campusloop is a student-focused marketplace platform designed to solve the challenges students face 
+            when buying and selling items. We create a <strong>safe, verified community</strong> where only 
+            university students can trade books, electronics, furniture, fashion, and more — all within their campus ecosystem.
           </p>
         </motion.div>
 
@@ -52,15 +50,15 @@ export default function About() {
           {[
             {
               title: "Our Mission",
-              text: "To empower global entrepreneurs with the knowledge, tools, and mentorship needed to build profitable Amazon FBA businesses and achieve financial independence.",
+              text: "To create a trusted marketplace where students can affordably buy, sell, and exchange essential items while building a sustainable campus community.",
             },
             {
               title: "Our Vision",
-              text: "To become the most trusted and impactful Amazon academy in the Middle East, helping thousands build successful online brands.",
+              text: "To become the go-to platform for student commerce across universities, fostering affordability, sustainability, and student entrepreneurship.",
             },
             {
               title: "Our Values",
-              text: "Integrity, transparency, innovation, and student success. We believe in teaching strategies that truly work — no shortcuts, no false promises.",
+              text: "Trust, safety, affordability, and community. We verify every student to ensure a scam-free environment where students help each other thrive.",
             },
           ].map((card, i) => (
             <motion.div
@@ -92,7 +90,7 @@ export default function About() {
           </h2>
 
           <div className="about-offer-grid">
-            {["Amazon UAE/KSA Training", "Product Hunting Mastery", "Supplier Sourcing Guidance", "Private Label Coaching", "Amazon PPC Advertising", "SEO & Ranking Strategies", "Weekly Live Sessions", "Student Community & Support"].map((item, index) => (
+            {["Verified Student Accounts", "Secure Marketplace", "Live Bidding System", "Multiple Categories", "Wishlist & Cart", "Real-time Chat", "Product Rentals", "Barter Exchange"].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -123,7 +121,7 @@ export default function About() {
           transition={{ duration: 1 }}
           className="about-story-text"
         >
-          Campusloop began as a small initiative to help friends and colleagues enter the booming world of Amazon selling. As demand grew, so did our mission. Today, Campusloop is a global Amazon FBA academy trusted by students across the UAE, KSA, Pakistan, India, and beyond. Our goal has remained the same — to make e-commerce success accessible, structured, and achievable for everyone.
+          Campusloop was born from a simple observation: students struggle with unreliable public marketplaces filled with scams and irrelevant listings. We created a platform exclusively for verified university students to trade safely within their campus community. Today, Campusloop helps students save money, reduce waste, and support each other through responsible commerce.
         </motion.p>
       </section>
 
@@ -140,24 +138,24 @@ export default function About() {
         <div className="about-ecosystem-grid">
           {[
             {
-              title: "Campusloop Academy",
-              text: "Our flagship education platform offering structured Amazon FBA courses, beginner to advanced modules, and deep-dive masterclasses.",
+              title: "Verified Marketplace",
+              text: "Every user is verified through their university credentials, ensuring a safe and trusted trading environment free from scammers.",
             },
             {
-              title: "Campusloop Live Mentorship",
-              text: "Weekly live classes, Q&A sessions, success strategies, and real-time product analysis directly with our expert mentors.",
+              title: "Live Hunting",
+              text: "Participate in real-time bidding auctions for exclusive items. Compete with other students to win great deals on products.",
             },
             {
-              title: "Campusloop Community",
-              text: "A private network of Amazon sellers, sharing insights, discoveries, supplier recommendations, and marketplace updates.",
+              title: "Multiple Categories",
+              text: "Browse through Rentals, Barter, Fashion, Electronics, Free for All, Furniture, and Digital Services — everything students need.",
             },
             {
-              title: "Campusloop Tools & Templates",
-              text: "Access product research sheets, sourcing templates, PL branding guides, PPC structures, and AI-powered scripts.",
+              title: "Smart Features",
+              text: "Wishlist your favorite items, add to cart, chat with sellers, track your bids, and manage your listings all in one place.",
             },
             {
-              title: "Campusloop PL Accelerator",
-              text: "A dedicated program for students who want to launch their private label brand, from idea to sourcing to listing launch.",
+              title: "Student Community",
+              text: "Connect with fellow students, share resources, exchange items, and build a sustainable campus economy together.",
             },
           ].map((c, i) => (
             <motion.div
@@ -185,7 +183,7 @@ export default function About() {
           Your Journey With Campusloop
         </motion.h2>
         <div className="about-timeline-container">
-          {["Enroll in the Academy", "Learn Product Hunting & Sourcing", "Create Your Amazon Account", "Build a Winning Listing", "Launch With PPC", "Scale With Mentorship"].map((step, index) => (
+          {["Sign Up & Verify", "Browse Products", "Add to Wishlist or Cart", "Chat With Sellers", "Make a Purchase or Bid", "List Your Own Items"].map((step, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -210,7 +208,7 @@ export default function About() {
           Campusloop in Numbers
         </motion.h2>
         <div className="about-stats-grid">
-          {["1200+ Students Trained", "300+ Private Labels Built", "7+ Years Amazon Experience", "Active Across 8+ Countries"].map((stat, index) => (
+          {["100% Verified Students", "8 Product Categories", "Live Bidding System", "Secure & Trusted Platform"].map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}

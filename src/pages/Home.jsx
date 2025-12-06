@@ -1,18 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import Categories from "../components/Categories";
 import BrowseSection from "../components/BrowseSection";
 import CounterCard from "../components/CounterCard";
+import { supabase } from "../supabaseClient";
 import {
   FaUsers,
   FaShoppingBag,
-  FaDollarSign,
+  FaGavel,
   FaStar,
 } from "react-icons/fa";
 import "../styles/Home.css";
 
 export default function Home() {
+  const [stats, setStats] = useState({
+    users: 0,
+    products: 0,
+    liveBids: 0,
+    transactions: 0,
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        // Get total users count
+        const { count: usersCount } = await supabase
+          .from('users')
+          .select('*', { count: 'exact', head: true });
+
+        // Get total products count
+        const { count: productsCount } = await supabase
+          .from('products')
+          .select('*', { count: 'exact', head: true });
+
+        // Get live bids count (products with bidding enabled)
+        const { count: liveBidsCount } = await supabase
+          .from('products')
+          .select('*', { count: 'exact', head: true })
+          .eq('bidding_enabled', true);
+
+        // Get sold products count (successful transactions)
+        const { count: soldCount } = await supabase
+          .from('products')
+          .select('*', { count: 'exact', head: true })
+          .eq('sold', true);
+
+        setStats({
+          users: usersCount || 0,
+          products: productsCount || 0,
+          liveBids: liveBidsCount || 0,
+          transactions: soldCount || 0,
+        });
+      } catch (error) {
+        console.error('Error fetching stats:', error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
   return (
     <div className="home-page">
 
@@ -105,10 +152,10 @@ export default function Home() {
         className="counters-section"
       >
         <div className="counters-container">
-          <CounterCard icon={<FaUsers />} end={5000} label="Active Students" color="#3b82f6" />
-          <CounterCard icon={<FaShoppingBag />} end={12000} label="Items Listed" color="#10b981" />
-          <CounterCard icon={<FaDollarSign />} end={250000} label="Money Saved (PKR)" color="#f97316" />
-          <CounterCard icon={<FaStar />} end={4500} label="Happy Transactions" color="#f59e0b" />
+          <CounterCard icon={<FaUsers />} end={stats.users} label="Verified Students" color="#DC143C" />
+          <CounterCard icon={<FaShoppingBag />} end={stats.products} label="Products Listed" color="#10b981" />
+          <CounterCard icon={<FaGavel />} end={stats.liveBids} label="Live Auctions" color="#f97316" />
+          <CounterCard icon={<FaStar />} end={stats.transactions} label="Successful Deals" color="#f59e0b" />
         </div>
       </motion.section>
 

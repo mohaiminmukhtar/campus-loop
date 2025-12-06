@@ -1,7 +1,6 @@
 .browse-section {
   padding: 4rem 2rem;
   background: #FFFFFF;
-  background-image: var(--bg-gradient);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -17,11 +16,11 @@
 .browse-title {
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #FF6A2A, #FF8A47);
+  background: linear-gradient(135deg, #DC143C, #FF1744);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 8px rgba(255, 106, 42, 0.3));
+  filter: drop-shadow(0 0 8px rgba(220, 20, 60, 0.5));
 }
 
 .browse-subtitle {
@@ -143,22 +142,20 @@
 }
 
 .browse-product-card {
-  background: #F2F2F4;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 106, 42, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 106, 42, 0.1);
+  background: #FFFFFF;
+  border-radius: 40px;
+  overflow: visible;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  transition: none;
+  padding: 12px;
 }
 
 .browse-product-card:hover {
-  border-color: #FF8A47;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 106, 42, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: none;
 }
 
 .browse-product-link {
@@ -168,51 +165,55 @@
 
 .browse-product-image-container {
   width: 100%;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
-  background: #FFFFFF;
+  background: #F8F8F8;
+  border-radius: 32px;
+  margin-bottom: 16px;
 }
 
 .browse-product-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: none;
 }
 
 .browse-product-favorite-button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 40px;
-  height: 40px;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 106, 42, 0.3);
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 106, 42, 0.2);
-  color: #2B2B2C;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #666;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .browse-product-favorite-button:hover {
-  background: #FF6A2A;
-  border-color: #FF6A2A;
+  background: #DC143C;
   color: #fff;
-  box-shadow: 0 0 20px rgba(255, 106, 42, 0.6);
+  box-shadow: 0 6px 16px rgba(220, 20, 60, 0.4);
+  transform: scale(1.1);
 }
 
 .browse-product-favorite-button.active {
-  color: #FF6A2A;
+  color: #DC143C;
+  background: rgba(220, 20, 60, 0.1);
 }
 
 .browse-product-info {
-  padding: 1.25rem;
+  padding: 0 0.5rem 0.5rem;
 }
 
 .browse-product-title {

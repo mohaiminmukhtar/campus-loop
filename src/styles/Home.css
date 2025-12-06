@@ -1,7 +1,6 @@
 .home-page {
   min-height: 100vh;
   background: #FFFFFF;
-  background-image: radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.03) 0%, transparent 70%);
   font-family: 'Poppins', sans-serif;
 }
 
