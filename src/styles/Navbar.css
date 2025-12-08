@@ -324,9 +324,9 @@
 }
 
 .navbar-settings-dropdown {
-  position: fixed;
-  top: 80px;
-  right: 20px;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
   background: #FFFFFF;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 10px color-mix(in srgb, var(--accent-primary) 0.15);

@@ -113,67 +113,6 @@ export default function Login() {
             <p className="login-logo-tagline">Your Campus Marketplace</p>
           </div>
 
-          {/* Tabs */}
-          <div className="login-tabs">
-            <button 
-              onClick={() => { 
-                setIsSignUp(false); 
-                setError(""); 
-                setFormData({ studentId: "", password: "", name: "", gender: "", studentCard: null }); 
-                setFileName("");
-              }} 
-              className={`login-tab ${!isSignUp ? "active" : ""}`}
-            >
-              <FaGraduationCap className="login-tab-icon" />
-              Login
-            </button>
-            <button 
-              onClick={() => { 
-                setIsSignUp(true); 
-                setError(""); 
-                setFormData({ studentId: "", password: "", name: "", gender: "", studentCard: null }); 
-                setFileName("");
-              }} 
-              className={`login-tab ${isSignUp ? "active" : ""}`}
-            >
-              <FaUserPlus className="login-tab-icon" />
-              Sign Up
-            </button>
-          </div>
-
-          {/* Header */}
-          <div className="login-header">
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={isSignUp ? 'signup' : 'login'}
-                initial={{ scale: 0, rotate: -180 }} 
-                animate={{ scale: 1, rotate: 0 }} 
-                exit={{ scale: 0, rotate: 180 }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }} 
-                className="login-icon-container"
-              >
-                {isSignUp ? <FaUserPlus /> : <FaGraduationCap />}
-              </motion.div>
-            </AnimatePresence>
-            <motion.h1 
-              key={isSignUp ? 'signup-title' : 'login-title'}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="login-title"
-            >
-              {isSignUp ? "Create Account" : "Student Login"}
-            </motion.h1>
-            <motion.p 
-              key={isSignUp ? 'signup-subtitle' : 'login-subtitle'}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
-              className="login-subtitle"
-            >
-              {isSignUp ? "Sign up with your student ID" : "Login with your Student ID and Password"}
-            </motion.p>
-          </div>
-
           {/* Error */}
           <AnimatePresence>
             {error && (
@@ -316,7 +255,7 @@ export default function Login() {
                 {formData.studentId.length >= 12 && <FaCheckCircle className="login-check-icon" />}
               </motion.div>
               <div className="login-input-hint">
-                Format: <span className="login-hint-example">sp22-bse-051</span> or <span className="login-hint-example">fa23-cse-042</span>
+                Format: <span className="login-hint-example">spxx-xxx-xxx</span> or <span className="login-hint-example">faxx-xxx-xxx</span>
               </div>
             </motion.div>
 
@@ -352,8 +291,8 @@ export default function Login() {
             <motion.button 
               type="submit" 
               disabled={isLoading} 
-              whileHover={{ scale: 1.05, boxShadow: "0 8px 30px rgba(255, 106, 42, 0.6)" }} 
-              whileTap={{ scale: 0.95 }} 
+              whileHover={{ scale: 1.02, boxShadow: "0 8px 30px rgba(220, 20, 60, 0.4)" }} 
+              whileTap={{ scale: 0.98 }} 
               className="login-button"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -371,19 +310,46 @@ export default function Login() {
               ) : (
                 <motion.div
                   className="login-button-content"
-                  whileHover={{ x: 5 }}
                 >
                   <span>{isSignUp ? "Sign Up" : "Login"}</span>
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <FaArrowRight />
-                  </motion.div>
+                  <FaArrowRight />
                 </motion.div>
               )}
             </motion.button>
           </form>
+
+          {/* Toggle between Login and Sign Up */}
+          <motion.div 
+            className="login-toggle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <p className="login-toggle-text">
+              {isSignUp ? "Already have an account?" : "Don't have an account?"}
+            </p>
+            <motion.button
+              onClick={() => { 
+                setIsSignUp(!isSignUp); 
+                setError(""); 
+                setFormData({ studentId: "", password: "", name: "", gender: "", studentCard: null }); 
+                setFileName("");
+              }}
+              className="login-toggle-button"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {isSignUp ? (
+                <>
+                  <FaGraduationCap /> Login
+                </>
+              ) : (
+                <>
+                  <FaUserPlus /> Sign Up
+                </>
+              )}
+            </motion.button>
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>

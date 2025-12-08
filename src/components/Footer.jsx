@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import { FaWhatsapp, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import emailjs from "emailjs-com";
 import "../styles/Footer.css";
 
 export default function Footer() {
-  const email = import.meta.env.VITE_RECEIVER_EMAIL || "support@campusloop.com";
-  const whatsapp = import.meta.env.VITE_WHATSAPP || "971501234567";
-  const facebook = import.meta.env.VITE_FACEBOOK || "https://facebook.com/campusloop";
-  const instagram = import.meta.env.VITE_INSTAGRAM || "https://instagram.com/campusloop";
 
   // Quick Links - 8 links (4-4 in 2 columns)
   const quickLinks = [
@@ -32,13 +27,6 @@ export default function Footer() {
     { name: "Furniture", path: "/products?category=furniture" },
     { name: "Digital Services", path: "/products?category=digital-services" },
     { name: "Live Hunting", path: "/live-hunting" },
-  ];
-
-  const socialLinks = [
-    { icon: FaEnvelope, url: `mailto:${email}` },
-    { icon: FaWhatsapp, url: `https://wa.me/${whatsapp}` },
-    { icon: FaFacebook, url: facebook },
-    { icon: FaInstagram, url: instagram },
   ];
 
   const [subscriberEmail, setSubscriberEmail] = useState("");
@@ -157,23 +145,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Newsletter + Social */}
+      {/* Newsletter */}
       <div className="footer-newsletter-section">
         <h3 className="footer-newsletter-title">Stay Connected</h3>
-
-        <div className="footer-social-links">
-          {socialLinks.map(({ icon: Icon, url }, i) => (
-            <a
-              key={i}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <Icon className="footer-social-icon" />
-            </a>
-          ))}
-        </div>
 
         <form onSubmit={handleSubscribe} className="footer-newsletter-form">
           <input

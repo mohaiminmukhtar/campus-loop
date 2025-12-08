@@ -368,8 +368,8 @@ export default function Sell() {
                 </div>
               </div>
 
-              {/* Bidding Option */}
-              <div className="sell-bidding-section">
+              {/* Bidding Option - Temporarily Disabled */}
+              {/* <div className="sell-bidding-section">
                 <label className="sell-checkbox-group">
                   <input
                     type="checkbox"
@@ -424,7 +424,7 @@ export default function Sell() {
                     </div>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Image Upload */}
               <div className="sell-form-group" style={{ marginBottom: "2rem" }}>
