@@ -360,7 +360,44 @@ export const ProductProvider = ({ children }) => {
   };
 
   // -----------------------------------------------------
-  // 5) SEARCH & CATEGORY
+  // 5) DELETE PRODUCT
+  // -----------------------------------------------------
+  const deleteProduct = async (productId) => {
+    if (!user) {
+      return { success: false, message: "Please login to delete products" };
+    }
+
+    try {
+      // Check if user owns the product
+      const product = products.find(p => p.id === productId);
+      if (!product) {
+        return { success: false, message: "Product not found" };
+      }
+
+      if (product.owner_id !== user.id) {
+        return { success: false, message: "You can only delete your own products" };
+      }
+
+      const { error } = await supabase
+        .from("products")
+        .delete()
+        .eq("id", productId);
+
+      if (error) {
+        console.error("Error deleting product:", error);
+        return { success: false, message: "Failed to delete product" };
+      }
+
+      loadProducts();
+      return { success: true, message: "Product deleted successfully" };
+    } catch (error) {
+      console.error("Delete product error:", error);
+      return { success: false, message: "Failed to delete product" };
+    }
+  };
+
+  // -----------------------------------------------------
+  // 6) SEARCH & CATEGORY
   // -----------------------------------------------------
   const getProductsByCategory = (category) => {
     if (!category) return products;
@@ -547,6 +584,7 @@ export const ProductProvider = ({ children }) => {
     refreshFavorites: loadFavorites,
     // products
     addProduct,
+    deleteProduct,
     getProductsByCategory,
     searchProducts,
     // bidding
