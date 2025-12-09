@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LogoIntro from "./components/LogoIntro";
 import ConnectionStatus from "./components/ConnectionStatus";
-import WelcomePopup from "./components/WelcomePopup";
 import { ProductProvider } from "./context/ProductContext";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { UserProvider } from "./context/UserContext";
@@ -106,9 +105,6 @@ function AppContent() {
         }}
       >
         <ConnectionStatus />
-        
-        {/* Welcome Popup - Shows 15 seconds after login */}
-        {isAuthenticated && <WelcomePopup />}
         
         {/* Show Navbar and Footer only when authenticated */}
         {isAuthenticated && <Navbar />}

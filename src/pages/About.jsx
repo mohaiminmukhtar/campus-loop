@@ -29,12 +29,7 @@ export default function About() {
         </motion.p>
 
         {/* SECTION: WHO WE ARE */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="about-section"
-        >
+        <div className="about-section">
           <h2 className="about-section-title">
             Who We Are
           </h2>
@@ -43,7 +38,7 @@ export default function About() {
             when buying and selling items. We create a <strong>safe, verified community</strong> where only 
             university students can trade books, electronics, furniture, fashion, and more — all within their campus ecosystem.
           </p>
-        </motion.div>
+        </div>
 
         {/* SECTION: OUR MISSION, VISION, VALUES */}
         <div className="about-cards-grid">
@@ -61,11 +56,8 @@ export default function About() {
               text: "Trust, safety, affordability, and community. We verify every student to ensure a scam-free environment where students help each other thrive.",
             },
           ].map((card, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
               className="about-card"
             >
               <h3 className="about-card-title">
@@ -74,67 +66,44 @@ export default function About() {
               <p className="about-card-text">
                 {card.text}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* SECTION: WHAT WE OFFER */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="about-section"
-        >
+        <div className="about-section">
           <h2 className="about-section-title">
             What We Offer
           </h2>
 
           <div className="about-offer-grid">
             {["Verified Student Accounts", "Secure Marketplace", "Live Bidding System", "Multiple Categories", "Wishlist & Cart", "Real-time Chat", "Product Rentals", "Barter Exchange"].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="about-offer-item"
               >
                 {item}
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
 
       {/* NEW SECTION: OUR STORY */}
       <section className="about-story-section">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="about-story-title"
-        >
+        <h2 className="about-story-title">
           Our Story
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="about-story-text"
-        >
+        </h2>
+        <p className="about-story-text">
           Campusloop was born from a simple observation: students struggle with unreliable public marketplaces filled with scams and irrelevant listings. We created a platform exclusively for verified university students to trade safely within their campus community. Today, Campusloop helps students save money, reduce waste, and support each other through responsible commerce.
-        </motion.p>
+        </p>
       </section>
 
       {/* NEW SECTION: THE CAMPUSLOOP ECOSYSTEM */}
       <section className="about-ecosystem-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="about-ecosystem-title"
-        >
+        <h2 className="about-ecosystem-title">
           The Campusloop Ecosystem
-        </motion.h2>
+        </h2>
         <div className="about-ecosystem-grid">
           {[
             {
@@ -158,66 +127,47 @@ export default function About() {
               text: "Connect with fellow students, share resources, exchange items, and build a sustainable campus economy together.",
             },
           ].map((c, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: i * 0.15 }}
               className="about-ecosystem-card"
             >
               <h3 className="about-ecosystem-card-title">{c.title}</h3>
               <p className="about-ecosystem-card-text">{c.text}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* NEW SECTION: TIMELINE */}
       <section className="about-timeline-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="about-timeline-title"
-        >
+        <h2 className="about-timeline-title">
           Your Journey With Campusloop
-        </motion.h2>
+        </h2>
         <div className="about-timeline-container">
           {["Sign Up & Verify", "Browse Products", "Add to Wishlist or Cart", "Chat With Sellers", "Make a Purchase or Bid", "List Your Own Items"].map((step, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
               className={`about-timeline-item ${index % 2 === 0 ? 'even' : ''}`}
             >
               Step {index + 1}: {step}
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* NEW SECTION: SUCCESS STATS */}
       <section className="about-stats-section">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="about-stats-title"
-        >
+        <h2 className="about-stats-title">
           Campusloop in Numbers
-        </motion.h2>
+        </h2>
         <div className="about-stats-grid">
           {["100% Verified Students", "8 Product Categories", "Live Bidding System", "Secure & Trusted Platform"].map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
               className="about-stat-card"
             >
               {stat}
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

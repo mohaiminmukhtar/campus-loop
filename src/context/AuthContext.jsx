@@ -23,7 +23,6 @@ export const AuthProvider = ({ children }) => {
               // Remove if expired
               if (parsed.expires_at && new Date(parsed.expires_at * 1000) < new Date()) {
                 localStorage.removeItem(key);
-                console.log('Removed expired token');
               }
               // Remove if too large (> 500KB)
               else if (item.length > 500000) {
@@ -57,7 +56,6 @@ export const AuthProvider = ({ children }) => {
           localStorage.removeItem(key);
         }
       });
-      console.log('Cleared all auth tokens');
     } catch (error) {
       console.error('Error clearing tokens:', error);
       localStorage.clear();
@@ -96,7 +94,6 @@ export const AuthProvider = ({ children }) => {
       
       // Clean up storage on session expiry
       if (event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
-        console.log(`🔄 Auth event: ${event}`);
         cleanupStorage();
       }
     });
@@ -148,7 +145,6 @@ export const AuthProvider = ({ children }) => {
       const emailForSupabase = normalizedId.replace(/-/g, "") + "@campusloop.com";
 
       // Step 1: Create user account with MINIMAL metadata
-      console.log('🔐 Attempting signup for:', normalizedId);
       
       const { data, error } = await supabase.auth.signUp({
         email: emailForSupabase,
@@ -228,7 +224,6 @@ export const AuthProvider = ({ children }) => {
         // Don't fail signup for this
       }
 
-      console.log('✅ Signup successful for:', normalizedId);
       return { success: true, user: data.user };
     } catch (error) {
       console.error('Signup error:', error);
@@ -282,10 +277,8 @@ export const AuthProvider = ({ children }) => {
       // Run storage cleanup
       cleanupStorage();
       // Clear session storage flags for popups so they show again on next login
-      sessionStorage.removeItem('hasSeenWelcomeThisSession');
       sessionStorage.removeItem('hasSeenLiveHuntingGuide');
       sessionStorage.removeItem('hasSeenIntro');
-      console.log('✅ Session storage cleared for popups');
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -386,8 +379,6 @@ export const AuthProvider = ({ children }) => {
 
       if (error) {
         console.error('Failed to clean metadata:', error);
-      } else {
-        console.log('Metadata cleaned successfully');
       }
     } catch (error) {
       console.error('Error cleaning metadata:', error);

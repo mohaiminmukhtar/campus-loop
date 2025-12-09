@@ -85,7 +85,10 @@ export default function Cart() {
                         </div>
                       </div>
                       <button
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => {
+                          removeFromCart(item.id);
+                          window.location.reload();
+                        }}
                         className="cart-item-remove"
                         style={{ padding: "0.75rem 1rem", background: "rgba(255, 77, 77, 0.1)", border: "1px solid rgba(255, 77, 77, 0.3)", borderRadius: "10px", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 600 }}
                       >

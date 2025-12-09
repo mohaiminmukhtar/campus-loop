@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useAuth } from "./AuthContext";
 import { withRetry } from "../utils/requestQueue";
@@ -40,7 +40,6 @@ export const ProductProvider = ({ children }) => {
     const channel = supabase
       .channel("products-changes")
       .on("postgres_changes", { event: "*", schema: "public", table: "products" }, () => {
-        console.log("Products real-time event");
         loadProducts();
       })
       .subscribe();
@@ -106,15 +105,11 @@ export const ProductProvider = ({ children }) => {
           table: "cart",
           filter: `userid=eq.${user.id}`
         }, (payload) => {
-          console.log("Cart real-time event:", payload);
           loadCart();
         })
-        .subscribe((status) => {
-          console.log("Cart subscription status:", status);
-        });
+        .subscribe();
 
       return () => {
-        console.log("Cleaning up cart subscription and polling");
         clearInterval(cartPollingInterval);
         supabase.removeChannel(cartChannel);
       };
@@ -212,7 +207,6 @@ export const ProductProvider = ({ children }) => {
         .in("id", ids);
 
       setFavorites(favProducts || []);
-      console.log("Favorites loaded:", favProducts?.length || 0);
     } catch (error) {
       console.error("Favorites load failed:", error);
       setFavorites([]);
@@ -238,15 +232,11 @@ export const ProductProvider = ({ children }) => {
           table: "favorites",
           filter: `userid=eq.${user.id}`
         }, (payload) => {
-          console.log("Favorites real-time event:", payload);
           loadFavorites();
         })
-        .subscribe((status) => {
-          console.log("Favorites subscription status:", status);
-        });
+        .subscribe();
 
       return () => {
-        console.log("Cleaning up favorites subscription and polling");
         clearInterval(pollingInterval);
         supabase.removeChannel(favoritesChannel);
       };
@@ -267,8 +257,6 @@ export const ProductProvider = ({ children }) => {
       if (error) {
         console.error("Add to favorites error:", error);
       } else {
-        console.log("Added to favorites:", product.id);
-        // Force immediate reload
         await loadFavorites();
       }
     } catch (error) {
@@ -288,8 +276,6 @@ export const ProductProvider = ({ children }) => {
       if (error) {
         console.error("Remove from favorites error:", error);
       } else {
-        console.log("Removed from favorites:", productId);
-        // Force immediate reload
         await loadFavorites();
       }
     } catch (error) {
@@ -427,8 +413,6 @@ export const ProductProvider = ({ children }) => {
         return { success: false, error: "You must be logged in to place a bid" };
       }
 
-      console.log('Placing bid - User ID:', session.user.id, 'Bidder ID:', bidderId);
-
       const { data: product, error: productError } = await supabase
         .from("products")
         .select("*")
@@ -474,8 +458,6 @@ export const ProductProvider = ({ children }) => {
         bidder_student_id: bidderData?.student_id || null,
       };
 
-      console.log('Attempting to insert bid:', bidData);
-
       const { data: insertedBid, error: bidError } = await supabase
         .from("bids")
         .insert(bidData)
@@ -497,8 +479,6 @@ export const ProductProvider = ({ children }) => {
         return { success: false, error: bidError.message || "Failed to place bid" };
       }
 
-      console.log('Bid inserted successfully:', insertedBid);
-
       // Update product with new highest bid (products table uses snake_case)
       const { error: updateError } = await supabase
         .from("products")
@@ -511,8 +491,6 @@ export const ProductProvider = ({ children }) => {
       if (updateError) {
         console.error("Product update error:", updateError);
         console.error("Update error details:", JSON.stringify(updateError, null, 2));
-      } else {
-        console.log("Product updated successfully with new bid");
       }
 
       // Force reload products

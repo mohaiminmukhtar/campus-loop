@@ -42,9 +42,6 @@ const checkConnection = async (retries = 3, delay = 2000) => {
       const { error } = await supabase.from('products').select('count', { count: 'exact', head: true });
       
       if (!error) {
-        console.log('✅ Supabase connection successful!');
-        console.log(`📡 Connected to: ${supabaseUrl}`);
-        console.log('🔐 Authentication ready');
         return true;
       }
       

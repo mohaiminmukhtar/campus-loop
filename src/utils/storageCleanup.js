@@ -40,10 +40,7 @@ export const getStorageInfo = () => {
  * Clean up old or unnecessary data
  */
 export const cleanupStorage = () => {
-  console.log('🧹 Starting localStorage cleanup...');
-  
   const beforeInfo = getStorageInfo();
-  console.log(`📊 Before cleanup: ${beforeInfo.totalSizeKB} KB (${beforeInfo.itemCount} items)`);
 
   let cleanedCount = 0;
 
@@ -54,7 +51,6 @@ export const cleanupStorage = () => {
       if (key !== STORAGE_KEYS.SUPABASE_AUTH) {
         localStorage.removeItem(key);
         cleanedCount++;
-        console.log(`🗑️ Removed old auth token: ${key}`);
       }
     }
   }
@@ -82,7 +78,6 @@ export const cleanupStorage = () => {
   for (let key in localStorage) {
     const isKnown = knownPrefixes.some(prefix => key.startsWith(prefix));
     if (!isKnown) {
-      console.log(`🗑️ Removing unknown key: ${key}`);
       localStorage.removeItem(key);
       cleanedCount++;
     }
@@ -90,11 +85,6 @@ export const cleanupStorage = () => {
 
   const afterInfo = getStorageInfo();
   const savedKB = (beforeInfo.totalSize - afterInfo.totalSize) / 1024;
-  
-  console.log(`✅ Cleanup complete!`);
-  console.log(`📊 After cleanup: ${afterInfo.totalSizeKB} KB (${afterInfo.itemCount} items)`);
-  console.log(`💾 Freed up: ${savedKB.toFixed(2)} KB`);
-  console.log(`🗑️ Removed ${cleanedCount} items`);
 
   return {
     before: beforeInfo,
@@ -116,10 +106,7 @@ export const emergencyCleanup = () => {
   
   if (authToken) {
     localStorage.setItem(STORAGE_KEYS.SUPABASE_AUTH, authToken);
-    console.log('✅ Auth token preserved');
   }
-  
-  console.log('✅ Emergency cleanup complete - all data cleared except auth');
 };
 
 /**
@@ -161,15 +148,13 @@ export const setupQuotaHandler = () => {
           originalSetItem.call(this, key, value);
           console.log('✅ Successfully saved after cleanup');
         } catch (retryError) {
-          console.error('❌ Still failing after cleanup, running emergency cleanup...');
           emergencyCleanup();
           
           // Final attempt
           try {
             originalSetItem.call(this, key, value);
-            console.log('✅ Successfully saved after emergency cleanup');
           } catch (finalError) {
-            console.error('❌ Failed to save even after emergency cleanup');
+            console.error('Failed to save after cleanup');
             throw finalError;
           }
         }
@@ -178,29 +163,13 @@ export const setupQuotaHandler = () => {
       }
     }
   };
-  
-  console.log('✅ Quota handler installed');
 };
 
 /**
  * Initialize storage management
  */
 export const initStorageManagement = () => {
-  console.log('🔧 Initializing storage management...');
-  
-  // Run initial cleanup
   cleanupStorage();
-  
-  // Check storage status
-  const quotaStatus = isStorageNearQuota();
-  if (quotaStatus.isNearQuota) {
-    console.warn(`⚠️ Storage usage is high: ${quotaStatus.percentUsed}%`);
-  } else {
-    console.log(`✅ Storage usage: ${quotaStatus.percentUsed}%`);
-  }
-  
-  // Setup automatic quota handler
+  isStorageNearQuota();
   setupQuotaHandler();
-  
-  console.log('✅ Storage management initialized');
 };

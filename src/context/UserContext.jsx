@@ -92,7 +92,6 @@ export const UserProvider = ({ children }) => {
           filter: `id=eq.${authUser.id}`
         },
         (payload) => {
-          console.log('User data updated in real-time:', payload.new);
           setUserData(payload.new);
         }
       )

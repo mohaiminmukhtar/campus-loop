@@ -50,13 +50,7 @@ export default function BrowseSection() {
     const isFav = isFavorite(product.id);
 
     return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.3 }}
-        className="browse-product-card"
-      >
+      <div className="browse-product-card">
         <Link to={`/product/${product.id}`} className="browse-product-link">
           {/* Product Image */}
           <div className="browse-product-image-container">
@@ -133,7 +127,7 @@ export default function BrowseSection() {
             </button>
           </div>
         </Link>
-      </motion.div>
+      </div>
     );
   };
 
@@ -141,13 +135,7 @@ export default function BrowseSection() {
     <section className="browse-section">
       <div className="browse-container">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="browse-header"
-        >
+        <div className="browse-header">
           <div>
             <h2 className="browse-title">
               Browse Products
@@ -218,7 +206,7 @@ export default function BrowseSection() {
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (

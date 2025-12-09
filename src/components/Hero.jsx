@@ -39,7 +39,7 @@ export default function Hero() {
 
         {/* Hero Text */}
         <div className="hero-text-container">
-          <h1 className="hero-title">Your Campus Marketplace</h1>
+          <h1 className="hero-title">Campus Marketplace</h1>
           <p className="hero-subtitle">
             Buy, sell, and exchange everything you need for campus life.
           </p>

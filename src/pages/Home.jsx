@@ -76,27 +76,14 @@ export default function Home() {
       </motion.div>
 
       {/* Categories Section */}
-      <motion.section 
-        id="categories"
-        initial={{ opacity: 0, y: 50 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        viewport={{ once: true }} 
-        transition={{ duration: 1 }}
-      >
+      <section id="categories">
         <Categories />
-      </motion.section>
+      </section>
 
       {/* Live Hunting Banner */}
-      <motion.section
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="live-hunting-banner-section"
-      >
-        <motion.div
+      <section className="live-hunting-banner-section">
+        <div
           className="live-hunting-banner"
-          whileHover={{ scale: 1.02 }}
           onClick={() => window.location.href = "/live-hunting"}
         >
           <div className="banner-glow"></div>
@@ -122,42 +109,27 @@ export default function Home() {
               </h2>
               <p className="banner-subtitle">Bid on exclusive items before time runs out!</p>
             </div>
-            <motion.button
-              className="banner-cta"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <button className="banner-cta">
               Start Bidding →
-            </motion.button>
+            </button>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
       {/* Browse Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 50 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        viewport={{ once: true }} 
-        transition={{ duration: 1, delay: 0.2 }}
-      >
+      <section>
         <BrowseSection />
-      </motion.section>
+      </section>
 
       {/* Counters Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        className="counters-section"
-      >
+      <section className="counters-section">
         <div className="counters-container">
           <CounterCard icon={<FaUsers />} end={stats.users} label="Verified Students" color="#DC143C" />
           <CounterCard icon={<FaShoppingBag />} end={stats.products} label="Products Listed" color="#10b981" />
           <CounterCard icon={<FaGavel />} end={stats.liveBids} label="Live Auctions" color="#f97316" />
           <CounterCard icon={<FaStar />} end={stats.transactions} label="Successful Deals" color="#f59e0b" />
         </div>
-      </motion.section>
+      </section>
 
     </div>
   );

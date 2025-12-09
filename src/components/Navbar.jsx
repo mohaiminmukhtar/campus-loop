@@ -189,9 +189,12 @@ export default function Navbar() {
         {/* Desktop Links */}
         {!isMobile && (
           <div className="navbar-desktop-links">
-            <Link 
-              to="/cart" 
+            <button 
+              onClick={() => {
+                window.location.href = '/cart';
+              }}
               className="navbar-link navbar-cart-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
             >
               <FaShoppingCart style={{ fontSize: "1.2rem" }} />
               {cartItemCount > 0 && (
@@ -199,7 +202,7 @@ export default function Navbar() {
                   {cartItemCount}
                 </span>
               )}
-            </Link>
+            </button>
             
             {/* Settings Dropdown */}
             <div ref={settingsDropdownRef} className="navbar-settings-container">
@@ -314,9 +317,12 @@ export default function Navbar() {
         {/* Mobile Cart and Hamburger */}
         {isMobile && (
           <div className="navbar-mobile-actions">
-            <Link 
-              to="/cart" 
+            <button 
+              onClick={() => {
+                window.location.href = '/cart';
+              }}
               className="navbar-mobile-cart-link"
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
             >
               <FaShoppingCart style={{ fontSize: "1.5rem" }} />
               {cartItemCount > 0 && (
@@ -324,7 +330,7 @@ export default function Navbar() {
                   {cartItemCount}
                 </span>
               )}
-            </Link>
+            </button>
           <button onClick={() => setMenuOpen(!menuOpen)} className="navbar-hamburger">
             <span className={`navbar-hamburger-line ${menuOpen ? 'open-1' : ''}`} />
             <span className={`navbar-hamburger-line ${menuOpen ? 'open-2' : ''}`} />
