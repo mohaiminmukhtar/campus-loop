@@ -153,7 +153,7 @@ export default function Navbar() {
                     className="navbar-search-result-item"
                   >
                     <div className="navbar-search-result-image">
-                      <img src={product.image || "/logo.PNG"} alt={product.title} />
+                      <img src={product.image_url || product.image || "/logo.PNG"} alt={product.title} />
                     </div>
                     <div className="navbar-search-result-content">
                       <h4 className="navbar-search-result-title">

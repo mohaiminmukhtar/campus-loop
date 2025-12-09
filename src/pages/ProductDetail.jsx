@@ -14,7 +14,7 @@ export default function ProductDetail() {
   const { products, addToCart, addToFavorites, removeFromFavorites, isFavorite, deleteProduct } = useProducts();
   const { user } = useAuth();
   const { showToast } = useToast();
-  const product = products.find((p) => p.id === parseInt(id));
+  const product = products.find((p) => p.id === id || p.id === parseInt(id));
 
   const [imageError, setImageError] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -199,7 +199,7 @@ export default function ProductDetail() {
                     onClick={handleAddToCart}
                     className="product-detail-button product-detail-button-primary"
                   >
-                    <FaShoppingCart /> Add to Cart
+                    <FaShoppingCart /> Proceed to Checkout
                   </button>
                 )
               ) : (
