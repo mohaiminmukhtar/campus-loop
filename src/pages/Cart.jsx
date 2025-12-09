@@ -54,7 +54,7 @@ export default function Cart() {
                 <div className="cart-item">
                   <Link to={`/product/${item.id}`} className="cart-item-image-link">
                     <div className="cart-item-image-wrapper">
-                      <img src={item.image || "/logo.PNG"} alt={item.title} className="cart-item-image" />
+                      <img src={item.image_url || item.image || "/logo.PNG"} alt={item.title} className="cart-item-image" />
                     </div>
                   </Link>
                   <div className="cart-item-content">

@@ -28,7 +28,7 @@ export default function Products() {
   const [searchQuery, setSearchQuery] = useState(urlSearch || "");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortBy, setSortBy] = useState("newest");
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
   const [showFilters, setShowFilters] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(category || "");
 
@@ -111,7 +111,7 @@ export default function Products() {
           {/* Product Image */}
           <div className="product-image-container">
             <img
-              src={product.image || "/logo.PNG"}
+              src={product.image_url || product.image || "/logo.PNG"}
               alt={product.title}
               className="product-image"
             />
@@ -289,7 +289,7 @@ export default function Products() {
                   type="number"
                   placeholder="Max"
                   value={priceRange.max}
-                  onChange={(e) => setPriceRange({ ...priceRange, max: parseInt(e.target.value) || 10000 })}
+                  onChange={(e) => setPriceRange({ ...priceRange, max: parseInt(e.target.value) || 100000 })}
                   className="products-filters-input"
                 />
               </div>

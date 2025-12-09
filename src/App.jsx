@@ -28,6 +28,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 import ComingSoon from "./pages/ComingSoon";
+import LiveHunting from "./pages/LiveHunting";
 
 // Protected Route Component
 function ProtectedRoute({ children }) {
@@ -128,7 +129,7 @@ function AppContent() {
             <Route path="/chat" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             <Route path="/bids" element={<ProtectedRoute><ComingSoon /></ProtectedRoute>} />
-            <Route path="/live-hunting" element={<ProtectedRoute><ComingSoon /></ProtectedRoute>} />
+            <Route path="/live-hunting" element={<ProtectedRoute><LiveHunting /></ProtectedRoute>} />
             
             {/* Catch all - redirect to login if not authenticated, home if authenticated */}
             <Route path="*" element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />} />

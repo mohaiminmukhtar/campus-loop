@@ -219,7 +219,7 @@ export default function Wishlist() {
                 }}
               >
                 <img
-                  src={product.image || "/logo.PNG"}
+                  src={product.image_url || product.image || "/logo.PNG"}
                   alt={product.title}
                   style={{
                     width: "100%",

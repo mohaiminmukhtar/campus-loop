@@ -924,3 +924,63 @@
     font-size: 0.95rem;
   }
 }
+
+
+/* Product Card Specific Styles */
+.auction-price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
+}
+
+.auction-price-label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.auction-price-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #FF6A2A, #FF8A47);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auction-category {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.auction-category svg {
+  color: #FF6A2A;
+}
+
+.auction-coming-soon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(255, 106, 42, 0.2), rgba(255, 138, 71, 0.2));
+  border-top: 1px solid rgba(255, 106, 42, 0.3);
+  color: #FF6A2A;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.auction-coming-soon-badge svg {
+  font-size: 1rem;
+}

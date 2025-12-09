@@ -13,7 +13,7 @@ export default function BrowseSection() {
   const { showToast } = useToast();
   
   const [sortBy, setSortBy] = useState("newest");
-  const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
+  const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -211,7 +211,7 @@ export default function BrowseSection() {
                     type="number"
                     placeholder="Max"
                     value={priceRange.max || ""}
-                    onChange={(e) => setPriceRange({ ...priceRange, max: parseInt(e.target.value) || 10000 })}
+                    onChange={(e) => setPriceRange({ ...priceRange, max: parseInt(e.target.value) || 100000 })}
                     className="browse-filters-input"
                   />
                 </div>

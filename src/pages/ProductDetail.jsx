@@ -29,11 +29,15 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="product-detail-page" style={{ textAlign: "center" }}>
-        <h1 style={{ fontSize: "2rem", color: "#FF6A2A", marginBottom: "1rem" }}>Product Not Found</h1>
-        <Link to="/products" style={{ color: "#FF6A2A", textDecoration: "none" }}>
-          Go back to products
-        </Link>
+      <div className="product-detail-page" style={{ 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center',
+        minHeight: '60vh',
+        gap: '1rem'
+      }}>
+        <h2 style={{ fontSize: "1.5rem", color: "#2B2B2C" }}>Loading...</h2>
       </div>
     );
   }
@@ -63,7 +67,7 @@ export default function ProductDetail() {
           >
             <div className="product-detail-image-wrapper">
               <img
-                src={imageError ? "/logo.PNG" : product.image || "/logo.PNG"}
+                src={imageError ? "/logo.PNG" : product.image_url || product.image || "/logo.PNG"}
                 alt={product.title}
                 onError={() => setImageError(true)}
                 className="product-detail-image"
